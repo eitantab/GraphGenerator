@@ -138,7 +138,7 @@ public class Graph {
 	    int e1,e2;
 	    double  weigth;
 	    
-	    File inFile = new File ("C:\\Users\\Hila Cohen\\Desktop\\infile.txt");
+	    File inFile = new File ("C:\\Users\\eitan\\github\\matala1\\src\\matala1\\G0.txt");
 	    Scanner sc = new Scanner (inFile);
 	    this.v=Integer.parseInt(sc.nextLine());
 	    this.e=Integer.parseInt(sc.nextLine());
