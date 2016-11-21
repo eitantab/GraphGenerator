@@ -6,7 +6,7 @@ import java.util.Vector;
 import java.io.*;
 
 class Vertex implements Comparable<Vertex> {
-	
+	// change
 	public int id, parent;
 	public boolean isVisited;
 	public double distance;
