@@ -6,7 +6,7 @@ import java.util.Vector;
 import java.io.*;
 
 class Vertex implements Comparable<Vertex> {
-	// change
+	
 	public int id, parent;
 	public boolean isVisited;
 	public double distance;
@@ -68,66 +68,8 @@ class D_Edge {
 	
 }
 
-//
-//public class Dijkstra {
-//	private Vertex[] graph;
-//	private int start;
-//	
-//	public Dijkstra(Vertex[] g, int start) {
-//		this.start = start;
-//		this.graph = copy(g);
-//		PriorityQueue<Vertex> queue = new PriorityQueue<Vertex>();
-//		graph[start].distance = 0;
-//		queue.add(graph[start]);
-//		while(!queue.isEmpty()) {
-//			int v = queue.poll().id;
-//			graph[v].isVisited = true;
-//			for(D_Edge edge : graph[v].edges) {
-//				int u = edge.vertex;
-//				if(!graph[u].isVisited) {
-//					if(graph[u].distance > graph[v].distance + edge.weigth) {
-//						queue.remove(graph[u]);
-//						graph[u].parent = v;
-//						graph[u].distance = graph[v].distance + edge.weigth;
-//						queue.add(graph[u]);
-//					}
-//				}
-//			}
-//		}
-//	}
-//
-//	public String getPathTo(int vertex) {
-//		if(vertex >= graph.length || vertex < 0) return "";
-//		String ans = "" + vertex;
-//		int v = vertex;
-//		while(graph[v].parent != -1) {
-//			ans = graph[v].parent + "->" + ans;
-//			v = graph[v].parent;
-//		}
-//		if(v == start) {
-//			return ans;
-//		}
-//		return "";
-//	}
-//	
-//	public String getAllDistance() {
-//		String ans = "[";
-//		for (int i = 0; i < graph.length; i++) {
-//			ans += graph[i].distance + (i != graph.length-1 ? "," : "");
-//		}
-//		return ans + "]";
-//	}
-//	
-//	private Vertex[] copy(Vertex[] g) {
-//		int n = g.length;
-//		Vertex[] temp = new Vertex[n];
-//		for (int i = 0; i < n; i++) {
-//			temp[i] = new Vertex(g[i]);
-//		}
-//		return temp;
-//	}
-////	
-//}
+
+
 public class Graph {
       int v;
       int e;
@@ -163,7 +105,14 @@ public class Graph {
 	      System.out.println (line);
 	    }
 	    sc.close();
-	    
+	    for (int i = 0; i < arrv.length; i++) {
+	    	for (int k = 0; k < arrv.length; k++) {
+				
+			
+	    	if (arrv[i].edges[k].iscoonect==false)
+	    		arrv[i].edges[k].weigth=Double.POSITIVE_INFINITY;
+	    	}
+		}
 	    
 	  }
 	  
@@ -183,9 +132,11 @@ public class Graph {
 		try {
 			Graph G = new Graph("FJGDKJF");
 		System.out.println(Arrays.toString(G.arrv));
+		System.out.println((new algo_graph()).pathbetween(0, 5, G));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 }
+	
 }
