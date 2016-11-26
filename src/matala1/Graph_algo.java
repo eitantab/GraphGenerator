@@ -2,15 +2,17 @@ package matala1;
 
 import java.util.PriorityQueue;
 
-public class algo_graph {
+public class Graph_algo {
 
 	public String pathbetween(int a ,int b , Graph G){
 
-		Dijkstra ans= new Dijkstra(G.arrv,a);
+		Dijkstra ans= new Dijkstra(G.arrv_arrOfNeighs,a);
 		return ans.getPathTo(b);
 
 	}
-
+/*
+ * Finds the Shortest path  , O(|V|^2)
+ */
 	public class Dijkstra {
 		private Vertex[] graph;
 		private int start;
