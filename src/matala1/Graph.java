@@ -82,7 +82,8 @@ public class Graph {
 	int e_numOfEdges;
 	Vertex [] arrv_arrOfNeighs;
 	int i=0;
-
+	static long durationTimeOfProcces=-1;
+	
 	public  Graph(String path) throws FileNotFoundException
 	{
 		int e1,e2;
@@ -144,6 +145,10 @@ public class Graph {
 		return this.e_numOfEdges;
 	}
 	public static void main(String[] args) {
+		long startTime =System.currentTimeMillis();
+		
+		
+		
 		try {
 			Graph G = new Graph("FJGDKJF");
 			System.out.println(Arrays.toString(G.arrv_arrOfNeighs));
@@ -152,6 +157,13 @@ public class Graph {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		long endTime = System.currentTimeMillis();
+		durationTimeOfProcces = (endTime - startTime);  
 	}
+	public long getDuration()
+	{
+		return durationTimeOfProcces;
+	}
+	
 
 }
